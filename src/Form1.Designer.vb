@@ -26,6 +26,10 @@ Partial Class Form1
         Me.MyTabControl1 = New Test.MyTabControl()
         Me.ColorTabPage1 = New Test.ColorTabPage()
         Me.ColorTabPage2 = New Test.ColorTabPage()
+        Me.ColorTabPage3 = New Test.ColorTabPage()
+        Me.ColorTabPage4 = New Test.ColorTabPage()
+        Me.ColorTabPage5 = New Test.ColorTabPage()
+        Me.ColorTabPage6 = New Test.ColorTabPage()
         Me.MyTabControl1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -46,9 +50,15 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MyTabControl1.Controls.Add(Me.ColorTabPage1)
         Me.MyTabControl1.Controls.Add(Me.ColorTabPage2)
+        Me.MyTabControl1.Controls.Add(Me.ColorTabPage3)
+        Me.MyTabControl1.Controls.Add(Me.ColorTabPage4)
+        Me.MyTabControl1.Controls.Add(Me.ColorTabPage5)
+        Me.MyTabControl1.Controls.Add(Me.ColorTabPage6)
         Me.MyTabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed
         Me.MyTabControl1.Location = New System.Drawing.Point(12, 12)
         Me.MyTabControl1.Name = "MyTabControl1"
+        Me.MyTabControl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.MyTabControl1.RightToLeftLayout = True
         Me.MyTabControl1.SelectedIndex = 0
         Me.MyTabControl1.Size = New System.Drawing.Size(776, 351)
         Me.MyTabControl1.TabIndex = 2
@@ -61,7 +71,7 @@ Partial Class Form1
         Me.ColorTabPage1.Padding = New System.Windows.Forms.Padding(30)
         Me.ColorTabPage1.Size = New System.Drawing.Size(768, 322)
         Me.ColorTabPage1.TabIndex = 0
-        Me.ColorTabPage1.Text = "ColorTabPage1"
+        Me.ColorTabPage1.Text = "تست۱"
         '
         'ColorTabPage2
         '
@@ -69,9 +79,49 @@ Partial Class Form1
         Me.ColorTabPage2.Location = New System.Drawing.Point(4, 25)
         Me.ColorTabPage2.Name = "ColorTabPage2"
         Me.ColorTabPage2.Padding = New System.Windows.Forms.Padding(30)
-        Me.ColorTabPage2.Size = New System.Drawing.Size(498, 212)
+        Me.ColorTabPage2.Size = New System.Drawing.Size(768, 322)
         Me.ColorTabPage2.TabIndex = 1
-        Me.ColorTabPage2.Text = "ColorTabPage2"
+        Me.ColorTabPage2.Text = "تست ۲"
+        '
+        'ColorTabPage3
+        '
+        Me.ColorTabPage3.BackColor = System.Drawing.Color.Red
+        Me.ColorTabPage3.Location = New System.Drawing.Point(4, 25)
+        Me.ColorTabPage3.Name = "ColorTabPage3"
+        Me.ColorTabPage3.Padding = New System.Windows.Forms.Padding(30)
+        Me.ColorTabPage3.Size = New System.Drawing.Size(768, 322)
+        Me.ColorTabPage3.TabIndex = 2
+        Me.ColorTabPage3.Text = "تست تب دراز"
+        '
+        'ColorTabPage4
+        '
+        Me.ColorTabPage4.BackColor = System.Drawing.Color.Red
+        Me.ColorTabPage4.Location = New System.Drawing.Point(4, 25)
+        Me.ColorTabPage4.Name = "ColorTabPage4"
+        Me.ColorTabPage4.Padding = New System.Windows.Forms.Padding(30)
+        Me.ColorTabPage4.Size = New System.Drawing.Size(768, 322)
+        Me.ColorTabPage4.TabIndex = 3
+        Me.ColorTabPage4.Text = "تست تب ۴"
+        '
+        'ColorTabPage5
+        '
+        Me.ColorTabPage5.BackColor = System.Drawing.Color.Red
+        Me.ColorTabPage5.Location = New System.Drawing.Point(4, 25)
+        Me.ColorTabPage5.Name = "ColorTabPage5"
+        Me.ColorTabPage5.Padding = New System.Windows.Forms.Padding(30)
+        Me.ColorTabPage5.Size = New System.Drawing.Size(768, 322)
+        Me.ColorTabPage5.TabIndex = 4
+        Me.ColorTabPage5.Text = "ColorTabPage5"
+        '
+        'ColorTabPage6
+        '
+        Me.ColorTabPage6.BackColor = System.Drawing.Color.Red
+        Me.ColorTabPage6.Location = New System.Drawing.Point(4, 25)
+        Me.ColorTabPage6.Name = "ColorTabPage6"
+        Me.ColorTabPage6.Padding = New System.Windows.Forms.Padding(30)
+        Me.ColorTabPage6.Size = New System.Drawing.Size(768, 322)
+        Me.ColorTabPage6.TabIndex = 5
+        Me.ColorTabPage6.Text = "تست تب ۶"
         '
         'Form1
         '
@@ -90,4 +140,8 @@ Partial Class Form1
     Friend WithEvents MyTabControl1 As MyTabControl
     Friend WithEvents ColorTabPage1 As ColorTabPage
     Friend WithEvents ColorTabPage2 As ColorTabPage
+    Friend WithEvents ColorTabPage3 As ColorTabPage
+    Friend WithEvents ColorTabPage4 As ColorTabPage
+    Friend WithEvents ColorTabPage5 As ColorTabPage
+    Friend WithEvents ColorTabPage6 As ColorTabPage
 End Class

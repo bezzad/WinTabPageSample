@@ -1,18 +1,21 @@
-﻿<System.ComponentModel.ToolboxItem(True)>
+﻿Imports System.ComponentModel
+
+<System.ComponentModel.ToolboxItem(True)>
 Public Class ColorTabPage
     Inherits System.Windows.Forms.TabPage
 
     Public Sub New()
         MyBase.New()
         BackColor = System.Drawing.Color.Red
-        Padding = New System.Windows.Forms.Padding(30)
         SetDefaultColor()
     End Sub
 
-    Public Property HeaderColor As Brush
+    <Category("Appearance")>
+    <Description("The color of tab header")>
+    Public Property HeaderColor As Color
 
     Public Sub SetDefaultColor()
-        HeaderColor = Brushes.Wheat
+        HeaderColor = SystemColors.Control
     End Sub
 
 End Class

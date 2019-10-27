@@ -22,7 +22,8 @@ Public Class MyTabControl
         'MyBase.OnDrawItem(e)
 
         Dim page As ColorTabPage = TabPages(e.Index)
-        e.Graphics.FillRectangle(page.HeaderColor, e.Bounds)
+        Dim brush = New SolidBrush(page.HeaderColor)
+        e.Graphics.FillRectangle(brush, e.Bounds)
         Dim sz = e.Graphics.MeasureString(TabPages(e.Index).Text, e.Font)
         e.Graphics.DrawString(TabPages(e.Index).Text, e.Font, Brushes.Black, e.Bounds.Left + (e.Bounds.Width - sz.Width) / 2, e.Bounds.Top + (e.Bounds.Height - sz.Height) / 2 + 1)
 
@@ -48,10 +49,10 @@ Public Class MyTabControl
 
             ' select before tabs
             If i < tabIndex Then
-                page.HeaderColor = Brushes.LightGreen
+                page.HeaderColor = Color.LightGreen
             ElseIf i = tabIndex Then
                 ' change selected tab header color
-                page.HeaderColor = Brushes.Green
+                page.HeaderColor = Color.Green
             Else
                 ' select after tabs
                 page.SetDefaultColor()
