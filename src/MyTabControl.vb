@@ -19,20 +19,26 @@ Public Class MyTabControl
 
 
     Protected Overrides Sub OnDrawItem(e As DrawItemEventArgs)
-        'MyBase.OnDrawItem(e)
-
+        MyBase.OnDrawItem(e)
         Dim page As ColorTabPage = TabPages(e.Index)
-        Dim brush = New SolidBrush(page.HeaderColor)
-        e.Graphics.FillRectangle(brush, e.Bounds)
-        Dim sz = e.Graphics.MeasureString(TabPages(e.Index).Text, e.Font)
-        e.Graphics.DrawString(TabPages(e.Index).Text, e.Font, Brushes.Black, e.Bounds.Left + (e.Bounds.Width - sz.Width) / 2, e.Bounds.Top + (e.Bounds.Height - sz.Height) / 2 + 1)
-
         Dim rect = e.Bounds
-        rect.Offset(0, 1)
-        rect.Inflate(0, -1)
-        e.Graphics.DrawRectangle(Pens.DarkGray, rect)
-        e.DrawFocusRectangle()
 
+        If RightToLeftLayout Then
+            rect.Location = New Point(Width - rect.X - rect.Width, rect.Y)
+        End If
+
+        Using headerBrush = New SolidBrush(page.HeaderColor)
+            e.Graphics.FillRectangle(headerBrush, rect)
+            Dim sz = e.Graphics.MeasureString(TabPages(e.Index).Text, e.Font)
+            e.Graphics.DrawString(TabPages(e.Index).Text, e.Font, Brushes.Black,
+                                  rect.Left + (rect.Width - sz.Width) / 2,
+                                  rect.Top + (rect.Height - sz.Height) / 2 + 1)
+
+            rect.Offset(0, 1)
+            rect.Inflate(0, -1)
+            e.Graphics.DrawRectangle(Pens.DarkGray, rect)
+            e.DrawFocusRectangle()
+        End Using
     End Sub
 
     Protected Overrides Sub OnSelectedIndexChanged(e As EventArgs)
